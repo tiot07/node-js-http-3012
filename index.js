@@ -9,7 +9,9 @@ const server = http.createServer((req, res) => {
     res.end();
 }).on('error',(e)=>{
 	console.error('['+new Date()+']Server Error',e);
-}).on;
+}).on('clientError',(e)=>{
+    console.error('['+new Date()+'] Client Error',e);
+});
 const port = 8000;
 server.listen(port, () => {
     console.log('Listening on ' + port);
